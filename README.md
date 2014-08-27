@@ -171,7 +171,7 @@ Next you can invoke RESTful calls as below.
 
 * **apiKey (String)** - Private api key for your recurly account.
 * **subdomain (String)** - subdomain for your account with recurly, ends with ```.recurly.com```. (No trailing slash)
-* **debug (Boolean)** (Default: false) - chunk till byte number.
+* **debug (Boolean)** (Default: false) - debug output.
 
 
 ## History
