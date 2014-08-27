@@ -37,12 +37,20 @@
 
 <p><a href="https://www.npmjs.org/package/easyrecurly"><img src="https://nodei.co/npm/easyrecurly.png?downloads=true" alt="NPM stats"></a></p>
 
-<p>A simple and light-weight interface wrapper for <a href="https://docs.recurly.com/)" target="_blank">Recurly</a>.</p>
+<p>A simple and light-weight interface wrapper for <a href="https://docs.recurly.com" target="_blank">Recurly</a>.</p>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>$ npm install easyrecurly
+</code></pre>
+
+<h2>
+<a name="benefits" class="anchor" href="#benefits"><span class="octicon octicon-link"></span></a>Benefits</h2>
+
+<pre><code>- Very easy to send objects in JSON, xml is generated for you.
+- Complete coverage of the API.
+- Result paging support.
 </code></pre>
 
 <h2>
@@ -63,10 +71,10 @@
     var eRecurly = new Recurly(require('./config'));
 </code></pre>
 
-<p>Next you can invoke RESTful calls as below.</p>
+<p>You will have access to all their RESTFul API, </p>
 
 <h2>
-<a name="accounts" class="anchor" href="#accounts"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/accounts" target="_blank">Accounts</a>
+<a name="accounts-doc-ref" class="anchor" href="#accounts-doc-ref"><span class="octicon octicon-link"></span></a>Accounts <a href="https://docs.recurly.com/api/accounts" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.accounts.list([filter], callback)
@@ -85,7 +93,7 @@ eRecurly.accounts.notes(accountCode, callback)
 </code></pre>
 
 <h2>
-<a name="billing-information" class="anchor" href="#billing-information"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/billing-info" target="_blank">Billing Information</a>
+<a name="billing-information-doc-ref" class="anchor" href="#billing-information-doc-ref"><span class="octicon octicon-link"></span></a>Billing Information <a href="https://docs.recurly.com/api/billing-info" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.billingInfo.update(accountCode, details, callback) 
@@ -96,7 +104,7 @@ eRecurly.billingInfo.remove(accountCode, callback)
 </code></pre>
 
 <h2>
-<a name="adjustments" class="anchor" href="#adjustments"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/adjustments" target="_blank">Adjustments</a>
+<a name="adjustments-doc-ref" class="anchor" href="#adjustments-doc-ref"><span class="octicon octicon-link"></span></a>Adjustments <a href="https://docs.recurly.com/api/adjustments" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.adjustments.get(accountCode, callback)
@@ -107,7 +115,7 @@ eRecurly.adjustments.remove(uuid, callback)
 </code></pre>
 
 <h2>
-<a name="coupons" class="anchor" href="#coupons"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/coupons" target="_blank">Coupons</a>
+<a name="coupons-doc-ref" class="anchor" href="#coupons-doc-ref"><span class="octicon octicon-link"></span></a>Coupons <a href="https://docs.recurly.com/api/coupons" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.coupons.list([filter], callback)
@@ -120,7 +128,7 @@ eRecurly.coupons.deactivate(couponCode, callback)
 </code></pre>
 
 <h2>
-<a name="coupon-redemtion" class="anchor" href="#coupon-redemtion"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">Coupon Redemtion</a>
+<a name="coupon-redemtion-doc-ref" class="anchor" href="#coupon-redemtion-doc-ref"><span class="octicon octicon-link"></span></a>Coupon Redemtion <a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.couponRedemption.redeem(couponCode, details, callback)
@@ -133,12 +141,12 @@ eRecurly.couponRedemption.getByInvoice(invoiceNumber, callback)
 </code></pre>
 
 <h2>
-<a name="invoices" class="anchor" href="#invoices"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/invoices" target="_blank">Invoices</a>
+<a name="invoices-doc-ref" class="anchor" href="#invoices-doc-ref"><span class="octicon octicon-link"></span></a>Invoices <a href="https://docs.recurly.com/api/invoices" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.invoices.list([filter], callback)
 
-eRecurly.invoices.listByAccount(accountcode, filter, callback)
+eRecurly.invoices.listByAccount(accountCode, filter, callback)
 
 eRecurly.invoices.get(invoiceNumber, callback)
 
@@ -150,12 +158,12 @@ eRecurly.invoices.markFailed(invoiceNumber, callback)
 </code></pre>
 
 <h2>
-<a name="subscriptions" class="anchor" href="#subscriptions"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/subscriptions" target="_blank">Subscriptions</a>
+<a name="subscriptions-doc-ref" class="anchor" href="#subscriptions-doc-ref"><span class="octicon octicon-link"></span></a>Subscriptions <a href="https://docs.recurly.com/api/subscriptions" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.subscriptions.list([filter], callback)
 
-eRecurly.subscriptions.listByAccount(accountcode, callback)
+eRecurly.subscriptions.listByAccount(accountCode, callback)
 
 eRecurly.subscriptions.get(uuid, callback)
 
@@ -175,22 +183,22 @@ eRecurly.subscriptions.preview(details, callback)
 </code></pre>
 
 <h2>
-<a name="plans" class="anchor" href="#plans"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/plans" target="_blank">Plans</a>
+<a name="plans-doc-ref" class="anchor" href="#plans-doc-ref"><span class="octicon octicon-link"></span></a>Plans <a href="https://docs.recurly.com/api/plans" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.plans.list([filter], callback)
 
-eRecurly.plans.get(plancode, callback) 
+eRecurly.plans.get(planCode, callback) 
 
 eRecurly.plans.create(details, callback)
 
-eRecurly.plans.update(plancode, details, callback)
+eRecurly.plans.update(planCode, details, callback)
 
-eRecurly.plans.remove(plancode, callback)
+eRecurly.plans.remove(planCode, callback)
 </code></pre>
 
 <h2>
-<a name="plan-add-ons" class="anchor" href="#plan-add-ons"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">Plan Add-ons</a>
+<a name="plan-add-ons-doc-ref" class="anchor" href="#plan-add-ons-doc-ref"><span class="octicon octicon-link"></span></a>Plan Add-ons <a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.planAddons.list(planCode, [filter], callback)
@@ -205,7 +213,7 @@ eRecurly.planAddons.remove(planCode, addonCode, callback)
 </code></pre>
 
 <h2>
-<a name="transactions" class="anchor" href="#transactions"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/transactions" target="_blank">Transactions</a>
+<a name="transactions-doc-ref" class="anchor" href="#transactions-doc-ref"><span class="octicon octicon-link"></span></a>Transactions <a href="https://docs.recurly.com/api/transactions" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.transactions.list(filter, callback) 
