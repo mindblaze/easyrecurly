@@ -1,7 +1,7 @@
 # Recurly API Wrapper
 
 [![Build Status](https://travis-ci.org/mindblaze/easyrecurly.png?branch=master)](https://travis-ci.org/mindblaze/easyrecurly)
-[![Dependency Status](https://www.versioneye.com/user/projects/533d32527bae4be0c7000242/badge.png)](https://www.versioneye.com/user/projects/533d32527bae4be0c7000242)
+[![Dependency Status](https://www.versioneye.com/user/projects/53fdecccf4df15018100004f/badge.png)](https://www.versioneye.com/user/projects/53fdecccf4df15018100004f)
 [![NPM version](https://badge.fury.io/js/easyrecurly.png)](http://badge.fury.io/js/easyrecurly)
 
 [![NPM stats](https://nodei.co/npm/easyrecurly.png?downloads=true)](https://www.npmjs.org/package/easyrecurly)
