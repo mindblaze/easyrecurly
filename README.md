@@ -6,13 +6,20 @@
 
 [![NPM stats](https://nodei.co/npm/easyrecurly.png?downloads=true)](https://www.npmjs.org/package/easyrecurly)
 
-A simple and light-weight interface wrapper for <a href="https://docs.recurly.com/)" target="_blank">Recurly</a>.
+A simple and light-weight interface wrapper for <a href="https://docs.recurly.com" target="_blank">Recurly</a>.
 
 ## Installation
 
 ```
 $ npm install easyrecurly
 ```
+
+
+## Benefits
+	- Very easy to send objects in JSON, xml is generated for you.
+	- Complete coverage of the API.
+	- Result paging support.
+
 
 ## Configurations
 Create a config file similar to this:
@@ -31,10 +38,11 @@ Create a config file similar to this:
 	var eRecurly = new Recurly(require('./config'));
 ```
 
-Next you can invoke RESTful calls as below.
+You will have access to all their RESTFul API, 
 
 
-## <a href="https://docs.recurly.com/api/accounts" target="_blank">Accounts</a>
+
+## Accounts <a href="https://docs.recurly.com/api/accounts" target="_blank">(Doc Ref)</a>
 
 	eRecurly.accounts.list([filter], callback)
 
@@ -51,7 +59,8 @@ Next you can invoke RESTful calls as below.
 	eRecurly.accounts.notes(accountCode, callback)
 
 
-## <a href="https://docs.recurly.com/api/billing-info" target="_blank">Billing Information</a>
+
+## Billing Information <a href="https://docs.recurly.com/api/billing-info" target="_blank">(Doc Ref)</a>
 
 	eRecurly.billingInfo.update(accountCode, details, callback) 
 
@@ -60,7 +69,8 @@ Next you can invoke RESTful calls as below.
 	eRecurly.billingInfo.remove(accountCode, callback) 
 
 
-## <a href="https://docs.recurly.com/api/adjustments" target="_blank">Adjustments</a>
+
+## Adjustments <a href="https://docs.recurly.com/api/adjustments" target="_blank">(Doc Ref)</a>
 
 	eRecurly.adjustments.get(accountCode, callback)
   
@@ -69,7 +79,8 @@ Next you can invoke RESTful calls as below.
 	eRecurly.adjustments.remove(uuid, callback)
 
 
-## <a href="https://docs.recurly.com/api/coupons" target="_blank">Coupons</a>
+
+## Coupons <a href="https://docs.recurly.com/api/coupons" target="_blank">(Doc Ref)</a>
 
 	eRecurly.coupons.list([filter], callback)
 	
@@ -80,7 +91,8 @@ Next you can invoke RESTful calls as below.
 	eRecurly.coupons.deactivate(couponCode, callback)
 
 
-## <a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">Coupon Redemtion</a>
+
+## Coupon Redemtion <a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">(Doc Ref)</a>
   
 	eRecurly.couponRedemption.redeem(couponCode, details, callback)
 
@@ -91,10 +103,11 @@ Next you can invoke RESTful calls as below.
 	eRecurly.couponRedemption.getByInvoice(invoiceNumber, callback)
 
 
-## <a href="https://docs.recurly.com/api/invoices" target="_blank">Invoices</a>
+
+## Invoices <a href="https://docs.recurly.com/api/invoices" target="_blank">(Doc Ref)</a>
 	eRecurly.invoices.list([filter], callback)
 	
-	eRecurly.invoices.listByAccount(accountcode, filter, callback)
+	eRecurly.invoices.listByAccount(accountCode, filter, callback)
 
 	eRecurly.invoices.get(invoiceNumber, callback)
   
@@ -105,11 +118,12 @@ Next you can invoke RESTful calls as below.
 	eRecurly.invoices.markFailed(invoiceNumber, callback)
 
 
-## <a href="https://docs.recurly.com/api/subscriptions" target="_blank">Subscriptions</a>
+
+## Subscriptions <a href="https://docs.recurly.com/api/subscriptions" target="_blank">(Doc Ref)</a>
 
 	eRecurly.subscriptions.list([filter], callback)
 	
-	eRecurly.subscriptions.listByAccount(accountcode, callback)
+	eRecurly.subscriptions.listByAccount(accountCode, callback)
 
 	eRecurly.subscriptions.get(uuid, callback)
 
@@ -128,20 +142,22 @@ Next you can invoke RESTful calls as below.
  	eRecurly.subscriptions.preview(details, callback)
 
 
-## <a href="https://docs.recurly.com/api/plans" target="_blank">Plans</a>
+
+## Plans <a href="https://docs.recurly.com/api/plans" target="_blank">(Doc Ref)</a>
 
 	eRecurly.plans.list([filter], callback)
 
-	eRecurly.plans.get(plancode, callback) 
+	eRecurly.plans.get(planCode, callback) 
 	
 	eRecurly.plans.create(details, callback)
   
-	eRecurly.plans.update(plancode, details, callback)
+	eRecurly.plans.update(planCode, details, callback)
   
-	eRecurly.plans.remove(plancode, callback)
+	eRecurly.plans.remove(planCode, callback)
 	
 
-## <a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">Plan Add-ons</a>
+
+## Plan Add-ons <a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">(Doc Ref)</a>
 
 	eRecurly.planAddons.list(planCode, [filter], callback)
 
@@ -154,7 +170,8 @@ Next you can invoke RESTful calls as below.
 	eRecurly.planAddons.remove(planCode, addonCode, callback)
 
 
-## <a href="https://docs.recurly.com/api/transactions" target="_blank">Transactions</a>
+
+## Transactions <a href="https://docs.recurly.com/api/transactions" target="_blank">(Doc Ref)</a>
 
 	eRecurly.transactions.list(filter, callback) 
 
@@ -167,6 +184,7 @@ Next you can invoke RESTful calls as below.
 	eRecurly.transactions.refund(id, amount, callback)
 
 
+
 ## Configuration
 
 * **apiKey (String)** - Private api key for your recurly account.
@@ -174,9 +192,11 @@ Next you can invoke RESTful calls as below.
 * **debug (Boolean)** (Default: false) - debug output.
 
 
+
 ## History
 
 * v0.0.1 (2014-08-27) -- Initial release.
+
 
 
 ## License
