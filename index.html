@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Easy Recurly by mindblaze</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Easy Recurly</h1>
+        <p>API Wrapper of Recurly for NodeJS</p>
+
+        <p class="view"><a href="https://github.com/mindblaze/easyrecurly">View the Project on GitHub <small>mindblaze/easyrecurly</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mindblaze/easyrecurly/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mindblaze/easyrecurly/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mindblaze/easyrecurly">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="recurly-api-wrapper" class="anchor" href="#recurly-api-wrapper"><span class="octicon octicon-link"></span></a>Recurly API Wrapper</h1>
+
+<p><a href="https://travis-ci.org/mindblaze/easyrecurly"><img src="https://travis-ci.org/mindblaze/easyrecurly.png?branch=master" alt="Build Status"></a>
+<a href="https://www.versioneye.com/user/projects/533d32527bae4be0c7000242"><img src="https://www.versioneye.com/user/projects/533d32527bae4be0c7000242/badge.png" alt="Dependency Status"></a>
+<a href="http://badge.fury.io/js/easyrecurly"><img src="https://badge.fury.io/js/easyrecurly.png" alt="NPM version"></a></p>
+
+<p><a href="https://www.npmjs.org/package/easyrecurly"><img src="https://nodei.co/npm/easyrecurly.png?downloads=true" alt="NPM stats"></a></p>
+
+<p>A simple and light-weight interface wrapper for <a href="https://docs.recurly.com/)" target="_blank">Recurly</a>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>$ npm install easyrecurly
+</code></pre>
+
+<h2>
+<a name="configurations" class="anchor" href="#configurations"><span class="octicon octicon-link"></span></a>Configurations</h2>
+
+<p>Create a config file similar to this:</p>
+
+<pre><code>    module.exports = {
+        apiKey: 'Recurly Private API Key',
+        subdomain: 'https://example.recurly.com'
+    };
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>    var Recurly = require('easyrecurly');
+    var eRecurly = new Recurly(require('./config'));
+</code></pre>
+
+<p>Next you can invoke RESTful calls as below.</p>
+
+<h2>
+<a name="accounts" class="anchor" href="#accounts"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/accounts" target="_blank">Accounts</a>
+</h2>
+
+<pre><code>eRecurly.accounts.list([filter], callback)
+
+eRecurly.accounts.create(details, callback)
+
+eRecurly.accounts.update(accountCode, details, callback)
+
+eRecurly.accounts.get(accountCode, callback)
+
+eRecurly.accounts.close(accountCode, callback)
+
+eRecurly.accounts.reopen(accountCode, callback)
+
+eRecurly.accounts.notes(accountCode, callback)
+</code></pre>
+
+<h2>
+<a name="billing-information" class="anchor" href="#billing-information"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/billing-info" target="_blank">Billing Information</a>
+</h2>
+
+<pre><code>eRecurly.billingInfo.update(accountCode, details, callback) 
+
+eRecurly.billingInfo.get(accountCode, callback) 
+
+eRecurly.billingInfo.remove(accountCode, callback) 
+</code></pre>
+
+<h2>
+<a name="adjustments" class="anchor" href="#adjustments"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/adjustments" target="_blank">Adjustments</a>
+</h2>
+
+<pre><code>eRecurly.adjustments.get(accountCode, callback)
+
+eRecurly.adjustments.create(accountCode, details, callback)
+
+eRecurly.adjustments.remove(uuid, callback)
+</code></pre>
+
+<h2>
+<a name="coupons" class="anchor" href="#coupons"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/coupons" target="_blank">Coupons</a>
+</h2>
+
+<pre><code>eRecurly.coupons.list([filter], callback)
+
+eRecurly.coupons.get(couponCode, callback)
+
+eRecurly.coupons.create(details, callback)
+
+eRecurly.coupons.deactivate(couponCode, callback)
+</code></pre>
+
+<h2>
+<a name="coupon-redemtion" class="anchor" href="#coupon-redemtion"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">Coupon Redemtion</a>
+</h2>
+
+<pre><code>eRecurly.couponRedemption.redeem(couponCode, details, callback)
+
+eRecurly.couponRedemption.get(accountCode, callback)
+
+eRecurly.couponRedemption.remove(accountCode, callback)
+
+eRecurly.couponRedemption.getByInvoice(invoiceNumber, callback)
+</code></pre>
+
+<h2>
+<a name="invoices" class="anchor" href="#invoices"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/invoices" target="_blank">Invoices</a>
+</h2>
+
+<pre><code>eRecurly.invoices.list([filter], callback)
+
+eRecurly.invoices.listByAccount(accountcode, filter, callback)
+
+eRecurly.invoices.get(invoiceNumber, callback)
+
+eRecurly.invoices.create(accountCode, details, callback)
+
+eRecurly.invoices.markSuccessful(invoiceNumber, callback)
+
+eRecurly.invoices.markFailed(invoiceNumber, callback)
+</code></pre>
+
+<h2>
+<a name="subscriptions" class="anchor" href="#subscriptions"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/subscriptions" target="_blank">Subscriptions</a>
+</h2>
+
+<pre><code>eRecurly.subscriptions.list([filter], callback)
+
+eRecurly.subscriptions.listByAccount(accountcode, callback)
+
+eRecurly.subscriptions.get(uuid, callback)
+
+eRecurly.subscriptions.create(details, callback)
+
+eRecurly.subscriptions.update(uuid, details, callback)
+
+eRecurly.subscriptions.cancel(uuid, callback)
+
+eRecurly.subscriptions.reactivate(uuid, callback)
+
+eRecurly.subscriptions.terminate(uuid, refundType, callback)
+
+eRecurly.subscriptions.postpone(uuid, nextRenewalDate, callback)
+
+eRecurly.subscriptions.preview(details, callback)
+</code></pre>
+
+<h2>
+<a name="plans" class="anchor" href="#plans"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/plans" target="_blank">Plans</a>
+</h2>
+
+<pre><code>eRecurly.plans.list([filter], callback)
+
+eRecurly.plans.get(plancode, callback) 
+
+eRecurly.plans.create(details, callback)
+
+eRecurly.plans.update(plancode, details, callback)
+
+eRecurly.plans.remove(plancode, callback)
+</code></pre>
+
+<h2>
+<a name="plan-add-ons" class="anchor" href="#plan-add-ons"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">Plan Add-ons</a>
+</h2>
+
+<pre><code>eRecurly.planAddons.list(planCode, [filter], callback)
+
+eRecurly.planAddons.get(planCode, addonCode, callback) 
+
+eRecurly.planAddons.create(planCode, details, callback)
+
+eRecurly.planAddons.update(planCode, addonCode, details, callback)
+
+eRecurly.planAddons.remove(planCode, addonCode, callback)
+</code></pre>
+
+<h2>
+<a name="transactions" class="anchor" href="#transactions"><span class="octicon octicon-link"></span></a><a href="https://docs.recurly.com/api/transactions" target="_blank">Transactions</a>
+</h2>
+
+<pre><code>eRecurly.transactions.list(filter, callback) 
+
+eRecurly.transactions.listByAccount(accountCode, [filter], callback)
+
+eRecurly.transactions.get(id, callback)
+
+eRecurly.transactions.create(details, callback) 
+
+eRecurly.transactions.refund(id, amount, callback)
+</code></pre>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<ul>
+<li>
+<strong>apiKey (String)</strong> - Private api key for your recurly account.</li>
+<li>
+<strong>subdomain (String)</strong> - subdomain for your account with recurly, ends with <code>.recurly.com</code>. (No trailing slash)</li>
+<li>
+<strong>debug (Boolean)</strong> (Default: false) - chunk till byte number.</li>
+</ul><h2>
+<a name="history" class="anchor" href="#history"><span class="octicon octicon-link"></span></a>History</h2>
+
+<ul>
+<li>v0.0.1 (2014-08-27) -- Initial release.</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2014 Talha Asad</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mindblaze">mindblaze</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-49019483-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
