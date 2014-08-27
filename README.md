@@ -38,9 +38,8 @@ Create a config file similar to this:
 	var eRecurly = new Recurly(require('./config'));
 ```
 
-You will have access to all their RESTFul API, 
 
-
+API Calls
 
 ## Accounts <a href="https://docs.recurly.com/api/accounts" target="_blank">(Doc Ref)</a>
 
