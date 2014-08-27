@@ -6,7 +6,7 @@
 
 [![NPM stats](https://nodei.co/npm/easyrecurly.png?downloads=true)](https://www.npmjs.org/package/easyrecurly)
 
-A simple and light-weight interface wrapper for Recurly(https://docs.recurly.com/).
+A simple and light-weight interface wrapper for [Recurly](https://docs.recurly.com/).
 
 ## Installation
 
@@ -25,155 +25,147 @@ Create a config file similar to this:
 ```
 
 
-## Example Usage
+## Usage
 ```
 	var Recurly = require('easyrecurly');
 	var eRecurly = new Recurly(require('./config'));
 ```
 
+Next you can invoke RESTful calls as below.
 
-Accounts(https://docs.recurly.com/api/accounts)
-===============
 
-	recurly.accounts.list([filter], callback)
+## [Accounts](https://docs.recurly.com/api/accounts)
 
-	recurly.accounts.create(details, callback)
+	eRecurly.accounts.list([filter], callback)
 
-	recurly.accounts.update(accountCode, details, callback)
+	eRecurly.accounts.create(details, callback)
 
-	recurly.accounts.get(accountCode, callback)
+	eRecurly.accounts.update(accountCode, details, callback)
 
-	recurly.accounts.close(accountCode, callback)
+	eRecurly.accounts.get(accountCode, callback)
 
-	recurly.accounts.reopen(accountCode, callback)
+	eRecurly.accounts.close(accountCode, callback)
+
+	eRecurly.accounts.reopen(accountCode, callback)
 	
-	recurly.accounts.notes(accountCode, callback)
+	eRecurly.accounts.notes(accountCode, callback)
 
 
-Billing Information(https://docs.recurly.com/api/billing-info)
-===============
+## [Billing Information](https://docs.recurly.com/api/billing-info)
 
-	recurly.billingInfo.update(accountCode, details, callback) 
+	eRecurly.billingInfo.update(accountCode, details, callback) 
 
-	recurly.billingInfo.get(accountCode, callback) 
+	eRecurly.billingInfo.get(accountCode, callback) 
 
-	recurly.billingInfo.remove(accountCode, callback) 
+	eRecurly.billingInfo.remove(accountCode, callback) 
 
 
-Adjustments(https://docs.recurly.com/api/adjustments)
-===============
+## [Adjustments](https://docs.recurly.com/api/adjustments)
 
-	recurly.adjustments.get(accountCode, callback)
+	eRecurly.adjustments.get(accountCode, callback)
   
-	recurly.adjustments.create(accountCode, details, callback)
+	eRecurly.adjustments.create(accountCode, details, callback)
 
-	recurly.adjustments.remove(uuid, callback)
+	eRecurly.adjustments.remove(uuid, callback)
 
 
-Coupons(https://docs.recurly.com/api/coupons)
-===============
+## [Coupons](https://docs.recurly.com/api/coupons)
 
-	recurly.coupons.list([filter], callback)
+	eRecurly.coupons.list([filter], callback)
 	
-	recurly.coupons.get(couponCode, callback)
+	eRecurly.coupons.get(couponCode, callback)
 
-	recurly.coupons.create(details, callback)
+	eRecurly.coupons.create(details, callback)
 
-	recurly.coupons.deactivate(couponCode, callback)
+	eRecurly.coupons.deactivate(couponCode, callback)
 
 
-Coupon Redemtion(https://docs.recurly.com/api/coupons/coupon-redemption)
-=================
+## [Coupon Redemtion](https://docs.recurly.com/api/coupons/coupon-redemption)
   
-	recurly.couponRedemption.redeem(couponCode, details, callback)
+	eRecurly.couponRedemption.redeem(couponCode, details, callback)
 
-	recurly.couponRedemption.get(accountCode, callback)
+	eRecurly.couponRedemption.get(accountCode, callback)
 
-	recurly.couponRedemption.remove(accountCode, callback)
+	eRecurly.couponRedemption.remove(accountCode, callback)
 
-	recurly.couponRedemption.getByInvoice(invoiceNumber, callback)
+	eRecurly.couponRedemption.getByInvoice(invoiceNumber, callback)
 
 
-Invoices(https://docs.recurly.com/api/invoices)
-===============
+## [Invoices](https://docs.recurly.com/api/invoices)
 
-	recurly.invoices.list([filter], callback)
+	eRecurly.invoices.list([filter], callback)
 	
-	recurly.invoices.listByAccount(accountcode, filter, callback)
+	eRecurly.invoices.listByAccount(accountcode, filter, callback)
 
-	recurly.invoices.get(invoiceNumber, callback)
+	eRecurly.invoices.get(invoiceNumber, callback)
   
-	recurly.invoices.create(accountCode, details, callback)
+	eRecurly.invoices.create(accountCode, details, callback)
 
-	recurly.invoices.markSuccessful(invoiceNumber, callback)
+	eRecurly.invoices.markSuccessful(invoiceNumber, callback)
 
-	recurly.invoices.markFailed(invoiceNumber, callback)
+	eRecurly.invoices.markFailed(invoiceNumber, callback)
 
 
-Subscriptions(https://docs.recurly.com/api/subscriptions)
-===============
+## [Subscriptions](https://docs.recurly.com/api/subscriptions)
 
-	recurly.subscriptions.list([filter], callback)
+	eRecurly.subscriptions.list([filter], callback)
 	
-	recurly.subscriptions.listByAccount(accountcode, callback)
+	eRecurly.subscriptions.listByAccount(accountcode, callback)
 
-	recurly.subscriptions.get(uuid, callback)
+	eRecurly.subscriptions.get(uuid, callback)
 
-	recurly.subscriptions.create(details, callback)
+	eRecurly.subscriptions.create(details, callback)
   
-	recurly.subscriptions.update(uuid, details, callback)
+	eRecurly.subscriptions.update(uuid, details, callback)
   
-	recurly.subscriptions.cancel(uuid, callback)
+	eRecurly.subscriptions.cancel(uuid, callback)
   
-	recurly.subscriptions.reactivate(uuid, callback)
+	eRecurly.subscriptions.reactivate(uuid, callback)
   
-	recurly.subscriptions.terminate(uuid, refundType, callback)
+	eRecurly.subscriptions.terminate(uuid, refundType, callback)
 
- 	recurly.subscriptions.postpone(uuid, nextRenewalDate, callback)
+ 	eRecurly.subscriptions.postpone(uuid, nextRenewalDate, callback)
  	
- 	recurly.subscriptions.preview(details, callback)
+ 	eRecurly.subscriptions.preview(details, callback)
 
 
-Plans(https://docs.recurly.com/api/plans)
-==================
+## [Plans](https://docs.recurly.com/api/plans)
 
-	recurly.plans.list([filter], callback)
+	eRecurly.plans.list([filter], callback)
 
-	recurly.plans.get(plancode, callback) 
+	eRecurly.plans.get(plancode, callback) 
 	
-	recurly.plans.create(details, callback)
+	eRecurly.plans.create(details, callback)
   
-	recurly.plans.update(plancode, details, callback)
+	eRecurly.plans.update(plancode, details, callback)
   
-	recurly.plans.remove(plancode, callback)
+	eRecurly.plans.remove(plancode, callback)
 	
 
-Plan Add-ons(https://docs.recurly.com/api/plans/add-ons)
-==================
+## [Plan Add-ons](https://docs.recurly.com/api/plans/add-ons)
 
-	recurly.planAddons.list(planCode, [filter], callback)
+	eRecurly.planAddons.list(planCode, [filter], callback)
 
-	recurly.planAddons.get(planCode, addonCode, callback) 
+	eRecurly.planAddons.get(planCode, addonCode, callback) 
   
-	recurly.planAddons.create(planCode, details, callback)
+	eRecurly.planAddons.create(planCode, details, callback)
   
-	recurly.planAddons.update(planCode, addonCode, details, callback)
+	eRecurly.planAddons.update(planCode, addonCode, details, callback)
   
-	recurly.planAddons.remove(planCode, addonCode, callback)
+	eRecurly.planAddons.remove(planCode, addonCode, callback)
 
 
-Transactions(https://docs.recurly.com/api/transactions)
-===============
+## [Transactions](https://docs.recurly.com/api/transactions)
 
-	recurly.transactions.list(filter, callback) 
+	eRecurly.transactions.list(filter, callback) 
 
-	recurly.transactions.listByAccount(accountCode, [filter], callback)
+	eRecurly.transactions.listByAccount(accountCode, [filter], callback)
 
-	recurly.transactions.get(id, callback)
+	eRecurly.transactions.get(id, callback)
 
-	recurly.transactions.create(details, callback) 
+	eRecurly.transactions.create(details, callback) 
 
-	recurly.transactions.refund(id, amount, callback)
+	eRecurly.transactions.refund(id, amount, callback)
 
 
 ## Configuration
