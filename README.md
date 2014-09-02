@@ -106,7 +106,7 @@ API Calls
 ## Invoices <a href="https://docs.recurly.com/api/invoices" target="_blank">(Doc Ref)</a>
 	eRecurly.invoices.list([filter], callback)
 	
-	eRecurly.invoices.listByAccount(accountCode, filter, callback)
+	eRecurly.invoices.listByAccount(accountCode, [filter], callback)
 
 	eRecurly.invoices.get(invoiceNumber, callback)
   
@@ -187,8 +187,8 @@ API Calls
 ## Configuration
 
 * **apiKey (String)** - Private api key for your recurly account.
-* **subdomain (String)** - subdomain for your account with recurly, ends with ```.recurly.com```. (No trailing slash)
-* **debug (Boolean)** (Default: false) - debug output.
+* **subdomain (String)** - Recurly subdomain with companyname. (No trailing slash)
+* **debug (Boolean)** (Default: false) - Debug output.
 
 
 

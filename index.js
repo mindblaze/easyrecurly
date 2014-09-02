@@ -107,7 +107,15 @@ var recurly = function(config) {
       clientObj.request(utility.addQueryParams(endpoints.invoices.list, filter), cb);
     },
     listByAccount: function(accountCode, filter, cb) {
-      clientObj.request(utility.addParams(utility.addQueryParams(endpoints.invoices.listByAccount, filter), {account_code: accountCode}), cb);
+      if (typeof filter == 'function') {
+        cb = filter;
+        filter = null;
+      }
+      
+      var routeObject = endpoints.invoices.listByAccount;
+      if (filter) utility.addQueryParams(routeObject, filter);
+      
+      clientObj.request(utility.addParams(routeObject, {account_code: accountCode}), cb);
     },
     get: function(invoiceNumber, cb) {
       clientObj.request(utility.addParams(endpoints.invoices.get, {invoice_number: invoiceNumber}), cb);
