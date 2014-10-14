@@ -1,5 +1,8 @@
 # History
 
+## V 0.0.2 (Oct 14, 2014)
+* Some dependencies updated.
+
 ## V 0.0.1 (Aug 27, 2014)
 * Initial stable release.
 
