@@ -1,5 +1,6 @@
 .npmignore
 .gitignore
+.travis.yml
 History.md
 test/
 examples/
