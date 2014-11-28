@@ -6,7 +6,7 @@
   },
   "name": "easyrecurly",
   "description": "A simple and lightweight interface wrapper for Recurly",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "recurly api",
     "recurring api",
@@ -26,7 +26,7 @@
   "dependencies": {
     "async": "0.9.0",
     "extend": "2.0.0",
-    "request": "2.45.0",
+    "request": "2.48.0",
     "xml2js": "0.4.4"
   }
 }

@@ -194,6 +194,7 @@ API Calls
 
 ## History
 
+* v0.0.3 (2014-11-28) -- Dependencies updated.
 * v0.0.2 (2014-10-14) -- Dependencies updated.
 * v0.0.1 (2014-08-27) -- Initial release.
 
