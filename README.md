@@ -194,6 +194,7 @@ API Calls
 
 ## History
 
+* v0.0.5 (2014-12-28) -- Dependencies updated.
 * v0.0.4 (2014-12-23) -- XML builder replaced by JS2XML.
 * v0.0.3 (2014-11-28) -- Dependencies updated.
 * v0.0.2 (2014-10-14) -- Dependencies updated.

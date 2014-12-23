@@ -1,5 +1,9 @@
 # History
 
+## V 0.0.5 (Dec 23, 2014)
+* Some dependencies updated.
+* A minor fix.
+
 ## V 0.0.4 (Dec 23, 2014)
 * XML builder replaced by JS2XML.
 
