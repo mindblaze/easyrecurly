@@ -2,7 +2,7 @@ var utility = require('./lib/utility'),
     client = require('./lib/client'),
     endpoints = require('./lib/endpoints'),
     xml2js = require('xml2js'),
-    xmlBuilder = new xml2js.Builder({xmldec: {version: '1.0', encoding: 'UTF-8'}}),
+    Js2Xml = require("js2xml").Js2Xml,
     async = require('async'),
     extend = require('extend');
 
@@ -18,10 +18,10 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.accounts.get, {account_code: accountCode}), cb);
     },
     create: function(obj, cb) {
-      clientObj.request(endpoints.accounts.create, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.accounts.create, new Js2Xml("account", obj).toString(), cb);
     },
     update: function(accountCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.accounts.update, {account_code: accountCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.accounts.update, {account_code: accountCode}), new Js2Xml("account", obj).toString(), cb);
     },
     close: function(accountCode, cb) {
       clientObj.request(utility.addParams(endpoints.accounts.close, {account_code: accountCode}), cb);
@@ -49,7 +49,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.adjustments.get, paramObj), cb);
     },
     create: function(accountCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.adjustments.create, {account_code: accountCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.adjustments.create, {account_code: accountCode}), new Js2Xml("adjustments", obj).toString(), cb);
     },
     remove: function(uuid, cb) {
       clientObj.request(utility.addParams(endpoints.adjustments.remove, {uuid: uuid}), cb);
@@ -62,7 +62,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.billingInfo.get, {account_code: accountCode}), cb);
     },
     update: function(accountCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.billingInfo.update, {account_code: accountCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.billingInfo.update, {account_code: accountCode}), new Js2Xml("billing_info", obj).toString(), cb);
     },
     remove: function(accountCode, cb) {
       clientObj.request(utility.addParams(endpoints.billingInfo.remove, {account_code: accountCode}), cb);
@@ -78,7 +78,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.coupons.get, {coupon_code: couponCode}), cb);
     },
     create: function(obj, cb) {
-      clientObj.request(endpoints.coupons.create, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.coupons.create, new Js2Xml("coupon", obj).toString(), cb);
     },
     deactivate: function(couponCode, cb) {
       clientObj.request(utility.addParams(endpoints.coupons.deactivate, {coupon_code: couponCode}), cb);
@@ -88,7 +88,7 @@ var recurly = function(config) {
   /* Doc: https://docs.recurly.com/api/coupons/coupon-redemption */
   this.couponRedemption = {
     redeem: function(couponCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.couponRedemption.redeem, {coupon_code: couponCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.couponRedemption.redeem, {coupon_code: couponCode}), new Js2Xml("redemption", obj).toString(), cb);
     },
     get: function(accountCode, cb) {
       clientObj.request(utility.addParams(endpoints.couponRedemption.get, {account_code: accountCode}), cb);
@@ -121,7 +121,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.invoices.get, {invoice_number: invoiceNumber}), cb);
     },
     create: function(accountCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.invoices.create, {account_code: accountCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.invoices.create, {account_code: accountCode}), new Js2Xml("invoice", obj).toString(), cb);
     },
     markSuccessful: function(invoiceNumber, cb) {
       clientObj.request(utility.addParams(endpoints.invoices.markSuccessful, {invoice_number: invoiceNumber}), cb);
@@ -147,10 +147,10 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.plans.get, {plan_code: planCode}), cb);
     },
     create: function(obj, cb) {
-      clientObj.request(endpoints.plans.create, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.plans.create, new Js2Xml("plan", obj).toString(), cb);
     },
     update: function(planCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.plans.update, {plan_code: planCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.plans.update, {plan_code: planCode}), new Js2Xml("plan", obj).toString(), cb);
     },
     remove: function(planCode, cb) {
       clientObj.request(utility.addParams(endpoints.plans.remove, {plan_code: planCode}), cb);
@@ -166,10 +166,10 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.planAddons.get, {plan_code: planCode, addon_code: addonCode}), cb);
     },
     create: function(planCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.planAddons.create, {plan_code: planCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.planAddons.create, {plan_code: planCode}), new Js2Xml("add_on", obj).toString(), cb);
     },
     update: function(planCode, addonCode, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.planAddons.update, {plan_code: planCode, add_on_code: addonCode}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.planAddons.update, {plan_code: planCode, add_on_code: addonCode}), new Js2Xml("add_on", obj).toString(), cb);
     },
     remove: function(planCode, addonCode, cb) {
       clientObj.request(utility.addParams(endpoints.planAddons.remove, {plan_code: planCode, add_on_code: addonCode}), cb);
@@ -188,10 +188,10 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.subscriptions.get, {uuid: uuid}), cb);
     },
     create: function(obj, cb) {
-      clientObj.request(endpoints.subscriptions.create, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.subscriptions.create, new Js2Xml("subscription", obj).toString(), cb);
     },
     update: function(uuid, obj, cb) {
-      clientObj.request(utility.addParams(endpoints.subscriptions.update, {uuid: uuid}), xmlBuilder.buildObject(obj), cb);
+      clientObj.request(utility.addParams(endpoints.subscriptions.update, {uuid: uuid}), new Js2Xml("subscription", obj).toString(), cb);
     },
     cancel: function(uuid, cb) {
       clientObj.request(utility.addParams(endpoints.subscriptions.cancel, {uuid: uuid}), cb);
@@ -206,7 +206,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.subscriptions.postpone, {uuid: uuid, next_renewal_date: nextRenewalDate}), cb);
     },
     preview: function(obj, cb) {
-      clientObj.request(endpoints.subscriptions.preview, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.subscriptions.preview, new Js2Xml("subscription", obj).toString(), cb);
     }
   };
 
@@ -222,7 +222,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.transactions.get, {'id': id}), cb);
     },
     create: function(obj, cb) {
-      clientObj.request(endpoints.transactions.create, xmlBuilder.buildObject(obj), cb);
+      clientObj.request(endpoints.transactions.create, new Js2Xml("transaction", obj).toString(), cb);
     },
     refund: function(id, cb, amount) {
       var route = utility.addParams(endpoints.transactions.refund, {id: id});
