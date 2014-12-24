@@ -29,7 +29,7 @@
       </header>
       <section>
         <h1>
-<a name="recurly-api-wrapper" class="anchor" href="#recurly-api-wrapper"><span class="octicon octicon-link"></span></a>Recurly API Wrapper</h1>
+<a id="recurly-api-wrapper" class="anchor" href="#recurly-api-wrapper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recurly API Wrapper</h1>
 
 <p><a href="https://travis-ci.org/mindblaze/easyrecurly"><img src="https://travis-ci.org/mindblaze/easyrecurly.png?branch=master" alt="Build Status"></a>
 <a href="https://www.versioneye.com/user/projects/53fdecccf4df15018100004f"><img src="https://www.versioneye.com/user/projects/53fdecccf4df15018100004f/badge.png" alt="Dependency Status"></a>
@@ -40,13 +40,13 @@
 <p>A simple and light-weight interface wrapper for <a href="https://docs.recurly.com" target="_blank">Recurly</a>.</p>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>$ npm install easyrecurly
 </code></pre>
 
 <h2>
-<a name="benefits" class="anchor" href="#benefits"><span class="octicon octicon-link"></span></a>Benefits</h2>
+<a id="benefits" class="anchor" href="#benefits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Benefits</h2>
 
 <pre><code>- Very easy to send objects in JSON, xml is generated for you.
 - Complete coverage of the API.
@@ -54,7 +54,7 @@
 </code></pre>
 
 <h2>
-<a name="configurations" class="anchor" href="#configurations"><span class="octicon octicon-link"></span></a>Configurations</h2>
+<a id="configurations" class="anchor" href="#configurations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configurations</h2>
 
 <p>Create a config file similar to this:</p>
 
@@ -65,16 +65,16 @@
 </code></pre>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <pre><code>    var Recurly = require('easyrecurly');
     var eRecurly = new Recurly(require('./config'));
 </code></pre>
 
-<p>You will have access to all their RESTFul API, </p>
+<p>API Calls</p>
 
 <h2>
-<a name="accounts-doc-ref" class="anchor" href="#accounts-doc-ref"><span class="octicon octicon-link"></span></a>Accounts <a href="https://docs.recurly.com/api/accounts" target="_blank">(Doc Ref)</a>
+<a id="accounts-doc-ref" class="anchor" href="#accounts-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accounts <a href="https://docs.recurly.com/api/accounts" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.accounts.list([filter], callback)
@@ -93,7 +93,7 @@ eRecurly.accounts.notes(accountCode, callback)
 </code></pre>
 
 <h2>
-<a name="billing-information-doc-ref" class="anchor" href="#billing-information-doc-ref"><span class="octicon octicon-link"></span></a>Billing Information <a href="https://docs.recurly.com/api/billing-info" target="_blank">(Doc Ref)</a>
+<a id="billing-information-doc-ref" class="anchor" href="#billing-information-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Billing Information <a href="https://docs.recurly.com/api/billing-info" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.billingInfo.update(accountCode, details, callback) 
@@ -104,7 +104,7 @@ eRecurly.billingInfo.remove(accountCode, callback)
 </code></pre>
 
 <h2>
-<a name="adjustments-doc-ref" class="anchor" href="#adjustments-doc-ref"><span class="octicon octicon-link"></span></a>Adjustments <a href="https://docs.recurly.com/api/adjustments" target="_blank">(Doc Ref)</a>
+<a id="adjustments-doc-ref" class="anchor" href="#adjustments-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adjustments <a href="https://docs.recurly.com/api/adjustments" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.adjustments.get(accountCode, callback)
@@ -115,7 +115,7 @@ eRecurly.adjustments.remove(uuid, callback)
 </code></pre>
 
 <h2>
-<a name="coupons-doc-ref" class="anchor" href="#coupons-doc-ref"><span class="octicon octicon-link"></span></a>Coupons <a href="https://docs.recurly.com/api/coupons" target="_blank">(Doc Ref)</a>
+<a id="coupons-doc-ref" class="anchor" href="#coupons-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coupons <a href="https://docs.recurly.com/api/coupons" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.coupons.list([filter], callback)
@@ -128,7 +128,7 @@ eRecurly.coupons.deactivate(couponCode, callback)
 </code></pre>
 
 <h2>
-<a name="coupon-redemtion-doc-ref" class="anchor" href="#coupon-redemtion-doc-ref"><span class="octicon octicon-link"></span></a>Coupon Redemtion <a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">(Doc Ref)</a>
+<a id="coupon-redemtion-doc-ref" class="anchor" href="#coupon-redemtion-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coupon Redemtion <a href="https://docs.recurly.com/api/coupons/coupon-redemption" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.couponRedemption.redeem(couponCode, details, callback)
@@ -141,12 +141,12 @@ eRecurly.couponRedemption.getByInvoice(invoiceNumber, callback)
 </code></pre>
 
 <h2>
-<a name="invoices-doc-ref" class="anchor" href="#invoices-doc-ref"><span class="octicon octicon-link"></span></a>Invoices <a href="https://docs.recurly.com/api/invoices" target="_blank">(Doc Ref)</a>
+<a id="invoices-doc-ref" class="anchor" href="#invoices-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Invoices <a href="https://docs.recurly.com/api/invoices" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.invoices.list([filter], callback)
 
-eRecurly.invoices.listByAccount(accountCode, filter, callback)
+eRecurly.invoices.listByAccount(accountCode, [filter], callback)
 
 eRecurly.invoices.get(invoiceNumber, callback)
 
@@ -158,7 +158,7 @@ eRecurly.invoices.markFailed(invoiceNumber, callback)
 </code></pre>
 
 <h2>
-<a name="subscriptions-doc-ref" class="anchor" href="#subscriptions-doc-ref"><span class="octicon octicon-link"></span></a>Subscriptions <a href="https://docs.recurly.com/api/subscriptions" target="_blank">(Doc Ref)</a>
+<a id="subscriptions-doc-ref" class="anchor" href="#subscriptions-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subscriptions <a href="https://docs.recurly.com/api/subscriptions" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.subscriptions.list([filter], callback)
@@ -183,7 +183,7 @@ eRecurly.subscriptions.preview(details, callback)
 </code></pre>
 
 <h2>
-<a name="plans-doc-ref" class="anchor" href="#plans-doc-ref"><span class="octicon octicon-link"></span></a>Plans <a href="https://docs.recurly.com/api/plans" target="_blank">(Doc Ref)</a>
+<a id="plans-doc-ref" class="anchor" href="#plans-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plans <a href="https://docs.recurly.com/api/plans" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.plans.list([filter], callback)
@@ -198,7 +198,7 @@ eRecurly.plans.remove(planCode, callback)
 </code></pre>
 
 <h2>
-<a name="plan-add-ons-doc-ref" class="anchor" href="#plan-add-ons-doc-ref"><span class="octicon octicon-link"></span></a>Plan Add-ons <a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">(Doc Ref)</a>
+<a id="plan-add-ons-doc-ref" class="anchor" href="#plan-add-ons-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plan Add-ons <a href="https://docs.recurly.com/api/plans/add-ons" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.planAddons.list(planCode, [filter], callback)
@@ -213,7 +213,7 @@ eRecurly.planAddons.remove(planCode, addonCode, callback)
 </code></pre>
 
 <h2>
-<a name="transactions-doc-ref" class="anchor" href="#transactions-doc-ref"><span class="octicon octicon-link"></span></a>Transactions <a href="https://docs.recurly.com/api/transactions" target="_blank">(Doc Ref)</a>
+<a id="transactions-doc-ref" class="anchor" href="#transactions-doc-ref" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transactions <a href="https://docs.recurly.com/api/transactions" target="_blank">(Doc Ref)</a>
 </h2>
 
 <pre><code>eRecurly.transactions.list(filter, callback) 
@@ -228,22 +228,30 @@ eRecurly.transactions.refund(id, amount, callback)
 </code></pre>
 
 <h2>
-<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
 <ul>
 <li>
 <strong>apiKey (String)</strong> - Private api key for your recurly account.</li>
 <li>
-<strong>subdomain (String)</strong> - subdomain for your account with recurly, ends with <code>.recurly.com</code>. (No trailing slash)</li>
+<strong>subdomain (String)</strong> - Recurly subdomain with companyname. (No trailing slash)</li>
 <li>
-<strong>debug (Boolean)</strong> (Default: false) - debug output.</li>
-</ul><h2>
-<a name="history" class="anchor" href="#history"><span class="octicon octicon-link"></span></a>History</h2>
+<strong>debug (Boolean)</strong> (Default: false) - Debug output.</li>
+</ul>
+
+<h2>
+<a id="history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h2>
 
 <ul>
+<li>v0.0.5 (2014-12-28) -- Dependencies updated.</li>
+<li>v0.0.4 (2014-12-23) -- XML builder replaced by JS2XML.</li>
+<li>v0.0.3 (2014-11-28) -- Dependencies updated.</li>
+<li>v0.0.2 (2014-10-14) -- Dependencies updated.</li>
 <li>v0.0.1 (2014-08-27) -- Initial release.</li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>The MIT License (MIT)</p>
 
