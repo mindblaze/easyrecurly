@@ -139,6 +139,8 @@ API Calls
  	eRecurly.subscriptions.postpone(uuid, nextRenewalDate, callback)
  	
  	eRecurly.subscriptions.preview(details, callback)
+ 	
+ 	eRecurly.subscriptions.previewChange(uuid, details, callback)
 
 
 
