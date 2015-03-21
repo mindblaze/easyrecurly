@@ -8,7 +8,7 @@ var utility = require('./lib/utility'),
 
 var recurly = function(config) {
   var clientObj = new client(config);
-  
+
   /* Doc: https://docs.recurly.com/api/accounts */
   this.accounts = {
     list: function(filter, cb) {
@@ -33,7 +33,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.accounts.notes, {account_code: accountCode}), cb);
     }
   };
-  
+
   /* Doc: https://docs.recurly.com/api/adjustments */
   this.adjustments = {
     list: function(accountCode, cb) {
@@ -55,7 +55,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.adjustments.remove, {uuid: uuid}), cb);
     }
   };
-  
+
   /* Doc: https://docs.recurly.com/api/billing-info */
   this.billingInfo = {
     get: function(accountCode, cb) {
@@ -111,10 +111,10 @@ var recurly = function(config) {
         cb = filter;
         filter = null;
       }
-      
+
       var routeObject = endpoints.invoices.listByAccount;
       if (filter) utility.addQueryParams(routeObject, filter);
-      
+
       clientObj.request(utility.addParams(routeObject, {account_code: accountCode}), cb);
     },
     get: function(invoiceNumber, cb) {
@@ -135,7 +135,7 @@ var recurly = function(config) {
     offline: function(invoiceNumber, cb) {
       clientObj.request(utility.addParams(endpoints.invoices.offline, {invoice_number: invoiceNumber}), cb);
     }
-    
+
   };
 
   /* Doc: https://docs.recurly.com/api/plans */
@@ -181,8 +181,12 @@ var recurly = function(config) {
     list: function(cb, filter) {
       clientObj.request(utility.addQueryParams(endpoints.subscriptions.list, filter), cb);
     },
-    listByAccount: function(accountCode, cb) {
-      clientObj.request(utility.addParams(endpoints.subscriptions.listByAccount, {account_code: accountCode}), cb);
+    listByAccount: function(accountCode, params, cb) {
+      if (typeof params == 'function') {
+        cb = params;
+        params = null;
+      }
+      clientObj.request(utility.addParams(utility.addQueryParams(endpoints.subscriptions.listByAccount, params), {account_code: accountCode}), cb);
     },
     get: function(uuid, cb) {
       clientObj.request(utility.addParams(endpoints.subscriptions.get, {uuid: uuid}), cb);
@@ -232,7 +236,7 @@ var recurly = function(config) {
       clientObj.request(route, cb);
     }
   };
-  
+
 };
 
 module.exports = recurly;
