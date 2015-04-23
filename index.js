@@ -8,7 +8,7 @@ var utility = require('./lib/utility'),
 
 var recurly = function(config) {
   var clientObj = new client(config);
-  
+
   /* Doc: https://docs.recurly.com/api/accounts */
   this.accounts = {
     list: function(filter, cb) {
@@ -33,7 +33,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.accounts.notes, {account_code: accountCode}), cb);
     }
   };
-  
+
   /* Doc: https://docs.recurly.com/api/adjustments */
   this.adjustments = {
     list: function(accountCode, cb) {
@@ -55,7 +55,7 @@ var recurly = function(config) {
       clientObj.request(utility.addParams(endpoints.adjustments.remove, {uuid: uuid}), cb);
     }
   };
-  
+
   /* Doc: https://docs.recurly.com/api/billing-info */
   this.billingInfo = {
     get: function(accountCode, cb) {
@@ -111,10 +111,10 @@ var recurly = function(config) {
         cb = filter;
         filter = null;
       }
-      
+
       var routeObject = endpoints.invoices.listByAccount;
       if (filter) utility.addQueryParams(routeObject, filter);
-      
+
       clientObj.request(utility.addParams(routeObject, {account_code: accountCode}), cb);
     },
     get: function(invoiceNumber, cb) {
@@ -135,7 +135,7 @@ var recurly = function(config) {
     offline: function(invoiceNumber, cb) {
       clientObj.request(utility.addParams(endpoints.invoices.offline, {invoice_number: invoiceNumber}), cb);
     }
-    
+
   };
 
   /* Doc: https://docs.recurly.com/api/plans */
@@ -207,6 +207,9 @@ var recurly = function(config) {
     },
     preview: function(obj, cb) {
       clientObj.request(endpoints.subscriptions.preview, new Js2Xml("subscription", obj).toString(), cb);
+    },
+    previewChange: function(uuid, obj, cb) {
+      clientObj.request(utility.addParams(endpoints.subscriptions.previewChange, {uuid: uuid}), new Js2Xml('subscription', obj).toString(), cb);
     }
   };
 
@@ -232,7 +235,7 @@ var recurly = function(config) {
       clientObj.request(route, cb);
     }
   };
-  
+
 };
 
 module.exports = recurly;
