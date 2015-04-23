@@ -1,5 +1,12 @@
 # History
 
+## V 0.0.6 (April 23, 2014)
+* Dependencies updated.
+* Fixed a bug in parser.
+* Added body to error object.
+* Added subscriptions.listByAccount()
+* Added subscriptions.preview()
+
 ## V 0.0.5 (Dec 23, 2014)
 * Some dependencies updated.
 * A minor fix.

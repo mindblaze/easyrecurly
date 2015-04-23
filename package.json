@@ -1,12 +1,12 @@
 {
   "author": {
     "name": "Talha Asad",
-    "email": "talha@mindblaze.net",
+    "email": "talha.asad@agiledevs.com",
     "url": "http://www.mindblaze.net"
   },
   "name": "easyrecurly",
   "description": "A simple and lightweight interface wrapper for Recurly",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "keywords": [
     "recurly api",
     "recurring api",
@@ -26,8 +26,8 @@
   "dependencies": {
     "async": "0.9.0",
     "extend": "2.0.0",
-    "request": "2.51.0",
-    "xml2js": "0.4.4",
-    "js2xml": "1.0.0"
+    "request": "2.55.0",
+    "xml2js": "0.4.8",
+    "js2xml": "1.0.2"
   }
 }

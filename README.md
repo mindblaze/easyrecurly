@@ -196,6 +196,7 @@ API Calls
 
 ## History
 
+* v0.0.6 (2014-12-28) -- (a bit long for this section, read History.md)
 * v0.0.5 (2014-12-28) -- Dependencies updated.
 * v0.0.4 (2014-12-23) -- XML builder replaced by JS2XML.
 * v0.0.3 (2014-11-28) -- Dependencies updated.
@@ -208,7 +209,7 @@ API Calls
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Talha Asad
+Copyright (c) 2014-2015 Talha Asad
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
