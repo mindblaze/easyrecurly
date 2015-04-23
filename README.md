@@ -122,7 +122,7 @@ API Calls
 
 	eRecurly.subscriptions.list([filter], callback)
 	
-	eRecurly.subscriptions.listByAccount(accountCode, callback)
+	eRecurly.subscriptions.listByAccount(accountCode, [params], callback)
 
 	eRecurly.subscriptions.get(uuid, callback)
 

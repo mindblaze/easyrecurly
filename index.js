@@ -181,8 +181,12 @@ var recurly = function(config) {
     list: function(cb, filter) {
       clientObj.request(utility.addQueryParams(endpoints.subscriptions.list, filter), cb);
     },
-    listByAccount: function(accountCode, cb) {
-      clientObj.request(utility.addParams(endpoints.subscriptions.listByAccount, {account_code: accountCode}), cb);
+    listByAccount: function(accountCode, params, cb) {
+      if (typeof params == 'function') {
+        cb = params;
+        params = null;
+      }
+      clientObj.request(utility.addParams(utility.addQueryParams(endpoints.subscriptions.listByAccount, params), {account_code: accountCode}), cb);
     },
     get: function(uuid, cb) {
       clientObj.request(utility.addParams(endpoints.subscriptions.get, {uuid: uuid}), cb);
